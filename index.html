@@ -6,6 +6,9 @@
 <meta name="description" content="Fernando Aragón — Apóstol, escritor y conferencista internacional desde Tucumán, Argentina.">
 <title>Fernando Aragón — Ministries</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/favicon-192.png">
 <style>
 /* ─── HERO CROSSFADE SLIDER ─── */
 #hero {
@@ -21,7 +24,7 @@
 }
 .hero-slide.active { opacity: 1; }
 .hero-slide:nth-child(1) { background-image: url('images/hero_slide1.jpg'); background-position: center 30%; }
-.hero-slide:nth-child(2) { background-image: url('images/hero_slide2.jpg'); background-position: center 40%; }
+.hero-slide:nth-child(2) { background-image: url('images/hero_slide2.jpg'); background-position: center 35%; }
 .hero-slide:nth-child(3) { background-image: url('images/hero_slide3.jpg'); background-position: center 35%; }
 
 .hero-grain {
@@ -64,15 +67,17 @@
 /* Slide indicators */
 .hero-dots {
   position: absolute; bottom: 36px; left: 7vw; z-index: 4;
-  display: flex; gap: 10px;
+  display: flex; gap: 8px; align-items: center;
   opacity: 0; animation: fadeIn 1s 1.5s forwards;
 }
 .hero-dot {
-  width: 28px; height: 2px; background: rgba(255,255,255,0.25);
-  transition: background 0.5s, width 0.4s;
-  cursor: pointer;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 14px; border-radius: 100px;
+  transition: all 0.4s; cursor: pointer; white-space: nowrap;
 }
-.hero-dot.active { background: var(--gold); width: 44px; }
+.hero-dot.active { color: var(--black); background: var(--gold); border-color: var(--gold); }
 .hero-scroll-ind {
   position: absolute; bottom: 32px; right: 7vw; z-index: 4;
   writing-mode: vertical-rl; font-size: 0.55rem; font-weight: 500;
@@ -169,12 +174,12 @@
 #ministerios { background:#0c0c0c; }
 .min-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; margin-top:64px; }
 .min-card { position:relative; height:520px; overflow:hidden; cursor:pointer; text-decoration:none; display:block; }
-.min-card img { width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease); filter:brightness(0.45) contrast(1.15) grayscale(60%); }
-.min-card:hover img { transform:scale(1.08); filter:brightness(0.65) contrast(1.05) grayscale(0%); }
+.min-card img { width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease); filter:brightness(0.72) contrast(1.05) grayscale(0%); }
+.min-card:hover img { transform:scale(1.06); filter:brightness(0.92) contrast(1.02) grayscale(0%); }
 .min-grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.3) 55%, transparent 100%); }
 .min-content { position:absolute; bottom:0; left:0; right:0; padding:32px 28px; }
 .min-tag { font-size:0.55rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-.min-title { font-family:'Anton',sans-serif; font-size:1.5rem; letter-spacing:0.05em; text-transform:uppercase; line-height:1; }
+.min-title { font-family:'Anton',sans-serif; font-size:1.5rem; letter-spacing:0.05em; text-transform:uppercase; line-height:1; color:#fff !important; }
 .min-desc { font-size:0.75rem; color:rgba(255,255,255,0.5); line-height:1.55; max-height:0; overflow:hidden; transition:max-height 0.6s var(--ease), margin-top 0.4s; }
 .min-card:hover .min-desc { max-height:80px; margin-top:10px; }
 .min-card-line { width:0; height:2px; background:var(--gold); transition:width 0.5s var(--ease); margin-bottom:12px; }
@@ -328,6 +333,7 @@
   <a href="#eventos">Eventos</a>
   <a href="#predicas">Prédicas</a>
   <a href="pages/libros.html">Libros</a>
+  <a href="#ministerios">Ministerios</a>
   <a href="#capsulas">Cápsulas</a>
   <a href="#blog">Blog</a>
   <a href="pages/fundacion.html">Fundación</a>
@@ -344,6 +350,7 @@
       <li><a href="#eventos">Eventos</a></li>
       <li><a href="#predicas">Prédicas</a></li>
       <li><a href="pages/libros.html">Libros</a></li>
+      <li><a href="#ministerios">Ministerios</a></li>
       <li><a href="#capsulas">Cápsulas</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="pages/fundacion.html">Fundación</a></li>
@@ -375,9 +382,9 @@
     </div>
   </div>
   <div class="hero-dots">
-    <div class="hero-dot active" data-idx="0"></div>
-    <div class="hero-dot" data-idx="1"></div>
-    <div class="hero-dot" data-idx="2"></div>
+    <div class="hero-dot active" data-idx="0">Ministerio</div>
+    <div class="hero-dot" data-idx="1">Comunidad</div>
+    <div class="hero-dot" data-idx="2">Legado</div>
   </div>
   <div class="hero-scroll-ind"><div class="scroll-line"></div>Scroll</div>
 </section>
@@ -503,7 +510,7 @@
       <div class="min-grad"></div>
       <div class="min-content">
         <div class="min-card-line"></div>
-        <div class="min-tag">01 — Ministerio</div>
+        <div class="min-tag">Ministerio</div>
         <div class="min-title">Conferencias</div>
         <div class="min-desc">Mensaje apostólico con unción para iglesias y congresos en Argentina y el mundo.</div>
       </div>
@@ -514,7 +521,7 @@
       <div class="min-grad"></div>
       <div class="min-content">
         <div class="min-card-line"></div>
-        <div class="min-tag">02 — Formación</div>
+        <div class="min-tag">Formación</div>
         <div class="min-title">Mentoría</div>
         <div class="min-desc">Acompañamiento a pastores y líderes en su proceso de madurez y establecimiento.</div>
       </div>
@@ -525,7 +532,7 @@
       <div class="min-grad"></div>
       <div class="min-content">
         <div class="min-card-line"></div>
-        <div class="min-tag">03 — Local</div>
+        <div class="min-tag">Local</div>
         <div class="min-title">Pastoral</div>
         <div class="min-desc">Desde Cristo Reina en Tucumán, pastoreando con amor y autoridad apostólica.</div>
       </div>
@@ -536,7 +543,7 @@
       <div class="min-grad"></div>
       <div class="min-content">
         <div class="min-card-line"></div>
-        <div class="min-tag">04 — Identidad</div>
+        <div class="min-tag">Identidad</div>
         <div class="min-title">Hombres</div>
         <div class="min-desc">Despertar la identidad, el legado y el llamado del varón cristiano de esta generación.</div>
       </div>
@@ -698,7 +705,7 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
-    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn" onclick="location.href='en/index.html'">EN</button></div>
   </div>
 </footer>
 

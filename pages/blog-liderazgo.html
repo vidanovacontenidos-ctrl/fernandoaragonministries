@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cómo encontrar un mentor apostólico — El camino del liderazgo no se recorre solo · Fernando Aragón">
+<title>Cómo encontrar un mentor apostólico — Fernando Aragón</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
+<style>
+.article-hero {
+  position:relative; height:65vh; min-height:440px;
+  display:flex; align-items:flex-end; overflow:hidden; padding-top:100px;
+}
+.article-hero-bg {
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  filter:brightness(0.28) grayscale(20%);
+  animation: slowZoom 14s ease-in-out forwards;
+}
+@keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1)} }
+.article-hero-grad { position:absolute; inset:0; background:linear-gradient(to top,#080808 0%,transparent 60%); }
+.article-hero-body { position:relative; z-index:2; padding:0 7vw 64px; max-width:860px; }
+.back-link { display:inline-flex; align-items:center; gap:8px; font-size:0.62rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); text-decoration:none; margin-bottom:28px; transition:color 0.3s; }
+.back-link:hover { color:var(--gold); }
+.article-cat { font-size:0.58rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.article-cat::before { content:''; display:block; width:24px; height:1px; background:var(--gold); }
+.article-h1 { font-family:'Anton',sans-serif; font-size:clamp(2.2rem,6vw,5rem); line-height:0.92; letter-spacing:-0.01em; text-transform:uppercase; margin-bottom:20px; }
+.article-meta { font-size:0.68rem; color:rgba(255,255,255,0.35); letter-spacing:0.1em; display:flex; align-items:center; gap:16px; }
+.article-meta span { display:flex; align-items:center; gap:6px; }
+
+/* ARTICLE BODY */
+.article-wrap { max-width:720px; margin:0 auto; padding:80px 7vw; }
+.article-body p { font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.9; margin-bottom:24px; }
+.article-body h2 { font-family:'Anton',sans-serif; font-size:1.6rem; letter-spacing:0.04em; text-transform:uppercase; margin:48px 0 16px; color:#fff; }
+.article-body h3 { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--gold); margin:32px 0 12px; }
+.article-body blockquote { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:rgba(255,255,255,0.6); line-height:1.5; padding:0 0 0 24px; border-left:3px solid var(--gold); margin:36px 0; }
+.article-body img { width:100%; display:block; margin:36px 0; filter:brightness(0.88); }
+.article-divider { width:48px; height:2px; background:var(--gold); margin:48px 0; }
+
+/* RELATED */
+.article-related { background:#0c0c0c; padding:80px 7vw; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:40px; }
+.rel-card { position:relative; height:220px; overflow:hidden; cursor:pointer; text-decoration:none; display:block; }
+.rel-card img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.6); transition:all 0.7s; }
+.rel-card:hover img { transform:scale(1.05); filter:brightness(0.85); }
+.rel-over { position:absolute; inset:0; background:linear-gradient(to top,rgba(8,8,8,0.95),transparent 55%); }
+.rel-body { position:absolute; bottom:0; left:0; right:0; padding:20px; }
+.rel-cat { font-size:0.55rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.rel-title { font-family:'Anton',sans-serif; font-size:0.9rem; letter-spacing:0.04em; text-transform:uppercase; color:#fff; line-height:1.2; }
+
+@media(max-width:768px){ .related-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="../index.html">Inicio</a>
+  <a href="../index.html#sobre">Sobre</a>
+  <a href="../index.html#eventos">Eventos</a>
+  <a href="../pages/libros.html" >Libros</a>
+  <a href="../pages/blog.html" >Blog</a>
+  <a href="../pages/fundacion.html" >Fundación</a>
+  <a href="../index.html#contacto">Contacto</a>
+</div>
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="../index.html" class="nav-logo">Fernando <span>Aragón</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="../index.html#eventos">Eventos</a></li>
+      <li><a href="../index.html#predicas">Prédicas</a></li>
+      <li><a href="../libros.html">Libros</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </nav>
+</div>
+
+<div class="article-hero">
+  <div class="article-hero-bg" style="background-image:url('../images/mentoria1.jpg')"></div>
+  <div class="article-hero-grad"></div>
+  <div class="article-hero-body">
+    <a href="blog.html" class="back-link">← Volver al blog</a>
+    <div class="article-cat">Liderazgo</div>
+    <h1 class="article-h1">Cómo encontrar un mentor apostólico</h1>
+    <div class="article-meta">
+      <span>✍ Fernando Aragón</span>
+      <span>📅 Abril 2026</span>
+      <span>⏱ 5 min de lectura</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="article-body">
+    
+      <p>El camino del liderazgo no se recorre solo. Hay una diferencia enorme entre crecer en conocimiento y crecer en carácter, y esa diferencia la marca casi siempre la presencia de un mentor en tu vida.</p>
+      <h2>¿Qué es un mentor apostólico?</h2>
+      <p>No es simplemente alguien que te enseña teología o te da consejería. Un mentor apostólico es un padre espiritual: alguien que ha caminado antes que vos, que conoce el territorio, y que está dispuesto a invertir tiempo y vida en tu crecimiento. No por obligación, sino por amor.</p>
+      <blockquote>"Lo que has oído de mí ante muchos testigos, encomiéndalo a hombres fieles que sean capaces de enseñar también a otros." — 2 Timoteo 2:2</blockquote>
+      <h2>Cómo reconocer a un verdadero mentor</h2>
+      <p>Un verdadero mentor no te controla — te suelta. No busca dependencia sino madurez. No te hace a su imagen sino que te ayuda a encontrar la tuya. Y fundamentalmente: tiene fruto. Su vida, su matrimonio, sus hijos, su iglesia — todo habla de integridad y de gracia.</p>
+      <p>Buscá a alguien que no necesite tu admiración para tratarte bien. Alguien que te diga la verdad aunque duela. Alguien que ore por vos, no solo contigo. Alguien cuya presencia te hace querer ser mejor, no simplemente estar bien.</p>
+      <h2>El precio de la mentoría</h2>
+      <p>La verdadera mentoría tiene un costo: humildad. Tenés que estar dispuesto a ser visto, a que alguien conozca tus luchas, tus miedos y tus límites. Eso asusta. Pero es exactamente en ese espacio de vulnerabilidad donde ocurre la verdadera transformación.</p>
+    
+  </div>
+  <div class="article-divider"></div>
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">
+    — Fernando Aragón · Abril 2026
+  </p>
+</div>
+
+<div class="article-related">
+  <div class="eyebrow reveal" style="padding:0 7vw;">Seguir leyendo</div>
+  <h2 class="big-title reveal" style="padding:8px 7vw 0;">Más <em>artículos</em></h2>
+  <div class="related-grid reveal" style="padding:0 7vw;">
+    <a href="blog-apostolado.html" class="rel-card"><img src="../images/general2.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Apostolado</div><div class="rel-title">El tiempo de los apóstoles</div></div></a><a href="blog-familia.html" class="rel-card"><img src="../images/familia.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Familia</div><div class="rel-title">La familia como primer ministerio</div></div></a><a href="blog-generaciones.html" class="rel-card"><img src="../images/legado1.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Generaciones</div><div class="rel-title">Qué legado estamos dejando</div></div></a>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="footer-logo">Fernando <span>Aragón</span></a>
+      <p class="footer-blurb">Apóstol · Escritor · Conferencista Internacional.</p>
+    </div>
+    <div class="footer-col"><h4>Blog</h4><ul>
+      <li><a href="blog-apostolado.html">Apostolado</a></li>
+      <li><a href="blog-familia.html">Familia</a></li>
+      <li><a href="blog-liderazgo.html">Liderazgo</a></li>
+      <li><a href="blog-generaciones.html">Generaciones</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Ministerio</h4><ul>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../libros.html">Libros</a></li>
+      <li><a href="../fundacion.html">Fundación</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Fernando Aragón Ministries</div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+function openMob(){ document.getElementById('mobNav').classList.add('open'); document.body.classList.add('mob-open'); }
+function closeMob(){ document.getElementById('mobNav').classList.remove('open'); document.body.classList.remove('mob-open'); }
+const burger = document.getElementById('navBurger');
+const mobClose = document.getElementById('mobClose');
+if(burger) burger.addEventListener('click', openMob);
+if(mobClose) mobClose.addEventListener('click', closeMob);
+document.querySelectorAll('#mobNav a').forEach(a => a.addEventListener('click', closeMob));
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

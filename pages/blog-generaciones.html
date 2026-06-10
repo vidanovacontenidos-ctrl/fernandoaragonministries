@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Qué legado estamos dejando — Una pregunta que todos debemos responder · Fernando Aragón">
+<title>Qué legado estamos dejando — Fernando Aragón</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
+<style>
+.article-hero {
+  position:relative; height:65vh; min-height:440px;
+  display:flex; align-items:flex-end; overflow:hidden; padding-top:100px;
+}
+.article-hero-bg {
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  filter:brightness(0.28) grayscale(20%);
+  animation: slowZoom 14s ease-in-out forwards;
+}
+@keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1)} }
+.article-hero-grad { position:absolute; inset:0; background:linear-gradient(to top,#080808 0%,transparent 60%); }
+.article-hero-body { position:relative; z-index:2; padding:0 7vw 64px; max-width:860px; }
+.back-link { display:inline-flex; align-items:center; gap:8px; font-size:0.62rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); text-decoration:none; margin-bottom:28px; transition:color 0.3s; }
+.back-link:hover { color:var(--gold); }
+.article-cat { font-size:0.58rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.article-cat::before { content:''; display:block; width:24px; height:1px; background:var(--gold); }
+.article-h1 { font-family:'Anton',sans-serif; font-size:clamp(2.2rem,6vw,5rem); line-height:0.92; letter-spacing:-0.01em; text-transform:uppercase; margin-bottom:20px; }
+.article-meta { font-size:0.68rem; color:rgba(255,255,255,0.35); letter-spacing:0.1em; display:flex; align-items:center; gap:16px; }
+.article-meta span { display:flex; align-items:center; gap:6px; }
+
+/* ARTICLE BODY */
+.article-wrap { max-width:720px; margin:0 auto; padding:80px 7vw; }
+.article-body p { font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.9; margin-bottom:24px; }
+.article-body h2 { font-family:'Anton',sans-serif; font-size:1.6rem; letter-spacing:0.04em; text-transform:uppercase; margin:48px 0 16px; color:#fff; }
+.article-body h3 { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--gold); margin:32px 0 12px; }
+.article-body blockquote { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:rgba(255,255,255,0.6); line-height:1.5; padding:0 0 0 24px; border-left:3px solid var(--gold); margin:36px 0; }
+.article-body img { width:100%; display:block; margin:36px 0; filter:brightness(0.88); }
+.article-divider { width:48px; height:2px; background:var(--gold); margin:48px 0; }
+
+/* RELATED */
+.article-related { background:#0c0c0c; padding:80px 7vw; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:40px; }
+.rel-card { position:relative; height:220px; overflow:hidden; cursor:pointer; text-decoration:none; display:block; }
+.rel-card img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.6); transition:all 0.7s; }
+.rel-card:hover img { transform:scale(1.05); filter:brightness(0.85); }
+.rel-over { position:absolute; inset:0; background:linear-gradient(to top,rgba(8,8,8,0.95),transparent 55%); }
+.rel-body { position:absolute; bottom:0; left:0; right:0; padding:20px; }
+.rel-cat { font-size:0.55rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.rel-title { font-family:'Anton',sans-serif; font-size:0.9rem; letter-spacing:0.04em; text-transform:uppercase; color:#fff; line-height:1.2; }
+
+@media(max-width:768px){ .related-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="../index.html">Inicio</a>
+  <a href="../index.html#sobre">Sobre</a>
+  <a href="../index.html#eventos">Eventos</a>
+  <a href="../pages/libros.html" >Libros</a>
+  <a href="../pages/blog.html" >Blog</a>
+  <a href="../pages/fundacion.html" >Fundación</a>
+  <a href="../index.html#contacto">Contacto</a>
+</div>
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="../index.html" class="nav-logo">Fernando <span>Aragón</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="../index.html#eventos">Eventos</a></li>
+      <li><a href="../index.html#predicas">Prédicas</a></li>
+      <li><a href="../libros.html">Libros</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </nav>
+</div>
+
+<div class="article-hero">
+  <div class="article-hero-bg" style="background-image:url('../images/legado1.jpg')"></div>
+  <div class="article-hero-grad"></div>
+  <div class="article-hero-body">
+    <a href="blog.html" class="back-link">← Volver al blog</a>
+    <div class="article-cat">Generaciones</div>
+    <h1 class="article-h1">Qué legado estamos dejando</h1>
+    <div class="article-meta">
+      <span>✍ Fernando Aragón</span>
+      <span>📅 Marzo 2026</span>
+      <span>⏱ 6 min de lectura</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="article-body">
+    
+      <p>Hay una pregunta que Fernando Aragón le hace a todo líder que acompaña: "¿Qué quedará cuando vos no estés?" No es una pregunta morbosa — es la pregunta más importante que un líder puede hacerse.</p>
+      <h2>El legado no es lo que hacés, es lo que construís</h2>
+      <p>Muchos confunden legado con fama. Creen que legado es que la gente los recuerde. Pero el verdadero legado no tiene que ver con el reconocimiento — tiene que ver con la transformación que dejás en otros.</p>
+      <p>Un pastor que formó diez líderes que a su vez formaron cien más, dejó un legado aunque nadie sepa su nombre. Un padre que le transmitió fe genuina a sus hijos dejó un legado que puede cambiar el destino de su línea familiar por generaciones.</p>
+      <blockquote>"Una generación alabará tus obras a otra, y anunciará tus poderosos hechos." — Salmos 145:4</blockquote>
+      <h2>El problema de la generación instantánea</h2>
+      <p>Vivimos en una cultura que prioriza lo inmediato. Todo tiene que dar fruto ahora, crecer rápido, hacerse viral. Pero el legado funciona con otra lógica: es lento, profundo, silencioso. Se construye en las conversaciones difíciles, en los años de fidelidad, en las decisiones que nadie aplaudió.</p>
+      <p>La generación que viene necesita hombres y mujeres que no le teman al tiempo largo. Que planten árboles bajo cuya sombra saben que no se sentarán. Que inviertan en personas sin calcular el retorno.</p>
+      <h2>Empezá hoy</h2>
+      <p>El legado no se construye de golpe. Se construye hoy, en la decisión que tomás esta mañana, en la conversación que tuviste con tu hijo, en la fidelidad con que ejerciste tu llamado aunque nadie lo viera. Cada día es un ladrillo. La pregunta es: ¿qué estás construyendo?</p>
+    
+  </div>
+  <div class="article-divider"></div>
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">
+    — Fernando Aragón · Marzo 2026
+  </p>
+</div>
+
+<div class="article-related">
+  <div class="eyebrow reveal" style="padding:0 7vw;">Seguir leyendo</div>
+  <h2 class="big-title reveal" style="padding:8px 7vw 0;">Más <em>artículos</em></h2>
+  <div class="related-grid reveal" style="padding:0 7vw;">
+    <a href="blog-apostolado.html" class="rel-card"><img src="../images/general2.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Apostolado</div><div class="rel-title">El tiempo de los apóstoles</div></div></a><a href="blog-familia.html" class="rel-card"><img src="../images/familia.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Familia</div><div class="rel-title">La familia como primer ministerio</div></div></a><a href="blog-liderazgo.html" class="rel-card"><img src="../images/mentoria1.jpg" alt=""><div class="rel-over"></div><div class="rel-body"><div class="rel-cat">Liderazgo</div><div class="rel-title">Cómo encontrar un mentor apostólico</div></div></a>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="footer-logo">Fernando <span>Aragón</span></a>
+      <p class="footer-blurb">Apóstol · Escritor · Conferencista Internacional.</p>
+    </div>
+    <div class="footer-col"><h4>Blog</h4><ul>
+      <li><a href="blog-apostolado.html">Apostolado</a></li>
+      <li><a href="blog-familia.html">Familia</a></li>
+      <li><a href="blog-liderazgo.html">Liderazgo</a></li>
+      <li><a href="blog-generaciones.html">Generaciones</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Ministerio</h4><ul>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../libros.html">Libros</a></li>
+      <li><a href="../fundacion.html">Fundación</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Fernando Aragón Ministries</div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+function openMob(){ document.getElementById('mobNav').classList.add('open'); document.body.classList.add('mob-open'); }
+function closeMob(){ document.getElementById('mobNav').classList.remove('open'); document.body.classList.remove('mob-open'); }
+const burger = document.getElementById('navBurger');
+const mobClose = document.getElementById('mobClose');
+if(burger) burger.addEventListener('click', openMob);
+if(mobClose) mobClose.addEventListener('click', closeMob);
+document.querySelectorAll('#mobNav a').forEach(a => a.addEventListener('click', closeMob));
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hombres — Fernando Aragón Ministries</title>
 <link rel="stylesheet" href="../css/style.css">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-192.png">
 <style>
 /* ── PAGE HERO BN ── */
 .min-page-hero {
@@ -68,7 +70,7 @@
 .min-gallery { background:var(--black); padding:0; overflow:hidden; }
 .gal-bw-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
 .gal-bw-item { height:320px; overflow:hidden; position:relative; }
-.gal-bw-item img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(100%) brightness(0.6); transition:all 0.8s; }
+.gal-bw-item img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(85%) brightness(0.78); transition:all 0.8s; }
 .gal-bw-item:hover img { filter:grayscale(0%) brightness(0.9); transform:scale(1.05); }
 
 /* ── OTRAS AREAS ── */
@@ -80,7 +82,7 @@
 .other-grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,0.95), transparent 55%); }
 .other-content { position:absolute; bottom:0; left:0; right:0; padding:24px 22px; }
 .other-tag { font-size:0.55rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-.other-title { font-family:'Anton',sans-serif; font-size:1.2rem; letter-spacing:0.05em; text-transform:uppercase; }
+.other-title { font-family:'Anton',sans-serif; font-size:1.2rem; letter-spacing:0.05em; text-transform:uppercase; color:#fff !important; }
 
 /* ── CTA ── */
 .min-cta { background:var(--black); padding:100px 7vw; text-align:center; }
@@ -100,6 +102,68 @@
   .punto{ grid-template-columns:1fr; gap:8px; }
   .punto-num{ font-size:1.5rem; }
 }
+
+/* ── STICKY SCROLL 2-PHOTO LAYOUT ── */
+.min-sticky-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #080808;
+}
+.min-sticky-photos {
+  position: relative;
+  height: 100%;
+}
+.sticky-photo-1 {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.sticky-photo-1 img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92) contrast(1.03);
+  display: block;
+}
+.sticky-photo-2 { display: none; }
+.min-sticky-content {
+  padding: 100px 8vw 100px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.intro-lema {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.35;
+  margin: 24px 0 28px;
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+}
+.intro-desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+@media (max-width: 1024px) {
+  .min-sticky-wrap { grid-template-columns: 1fr; }
+  .min-sticky-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: auto; }
+  .sticky-photo-1 { position: static; height: 300px; }
+  .sticky-photo-2 { height: 300px; margin-top: 0; }
+  .min-sticky-content { padding: 60px 7vw; }
+}
+@media (max-width: 640px) {
+  .min-sticky-photos { grid-template-columns: 1fr; }
+  .sticky-photo-2 { display: none; }
+  .sticky-photo-1 { height: 260px; }
+}
+
 </style>
 </head>
 <body>
@@ -124,6 +188,7 @@
       <li><a href="../index.html#predicas">Prédicas</a></li>
       <li><a href="libros.html">Libros</a></li>
       <li><a href="../index.html#ministerios" class="active">Ministerios</a></li>
+      <li><a href="../index.html#ministerios" class="active">Ministerios</a></li>
       <li><a href="fundacion.html">Fundación</a></li>
       <li><a href="blog.html">Blog</a></li>
     </ul>
@@ -139,16 +204,31 @@
   <div class="mph-grad"></div>
   <div class="mph-body">
     <a href="../index.html#ministerios" class="back-link">← Áreas de ministerio</a>
-    <div class="eyebrow" style="color:var(--gold)">04 — Identidad · Legado</div>
+    <div class="eyebrow" style="color:var(--gold)">Identidad · Legado</div>
     <h1 class="big-title" style="font-size:clamp(4rem,10vw,9rem); line-height:0.88;">Hombres</h1>
   </div>
   <div class="mph-num">04</div>
 </div>
 
 <!-- INTRO -->
-<div class="min-intro">
-  <div>
+
+<!-- INTRO STICKY SCROLL -->
+<div class="min-sticky-wrap">
+  <!-- LEFT: sticky photo column -->
+  <div class="min-sticky-photos">
+    <div class="sticky-photo-1">
+      <img src="../images/hombres2.jpg" alt="">
+    </div>
+    </div>
+  <!-- RIGHT: scrolling content -->
+  <div class="min-sticky-content">
     <div class="eyebrow reveal">El ministerio de los hombres</div>
+    <blockquote class="intro-lema reveal">Despertando la identidad del varón cristiano</blockquote>
+    <p class="intro-desc reveal">Fernando Aragón tiene un llamado especial hacia los hombres. En encuentros, conferencias y retiros específicos para varones, desafía a los hombres a recuperar su identidad, abrazar su llamado y dejar un legado que trascienda generaciones.</p>
+    <a href="../index.html#contacto" class="btn-pill solid reveal">Invitar al ministerio de hombres →</a>
+  </div>
+</div>
+
     <div class="intro-lema reveal">Despertando la identidad del varón cristiano</div>
     <p class="intro-desc reveal">Fernando Aragón tiene un llamado especial hacia los hombres. En encuentros, conferencias y retiros específicos para varones, desafía a los hombres a recuperar su identidad, abrazar su llamado y dejar un legado que trascienda generaciones.</p>
     <a href="../index.html#contacto" class="btn-pill solid reveal">Invitar al ministerio de hombres →</a>
@@ -225,7 +305,7 @@
           <img src="../images/conferencia3.jpg" alt="Conferencias">
           <div class="other-grad"></div>
           <div class="other-content">
-            <div class="other-tag">01 — Ministerio</div>
+            <div class="other-tag">Ministerio</div>
             <div class="other-title">Conferencias</div>
           </div>
         </a>
@@ -233,7 +313,7 @@
           <img src="../images/mentoria1.jpg" alt="Mentoría">
           <div class="other-grad"></div>
           <div class="other-content">
-            <div class="other-tag">02 — Formación</div>
+            <div class="other-tag">Formación</div>
             <div class="other-title">Mentoría</div>
           </div>
         </a>
@@ -241,7 +321,7 @@
           <img src="../images/pastoral2.jpg" alt="Pastoral">
           <div class="other-grad"></div>
           <div class="other-content">
-            <div class="other-tag">03 — Local · Tucumán</div>
+            <div class="other-tag">Local · Tucumán</div>
             <div class="other-title">Pastoral</div>
           </div>
         </a>
