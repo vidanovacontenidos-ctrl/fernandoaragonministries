@@ -306,12 +306,12 @@ footer {
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.25) grayscale(30%);
+  filter: brightness(0.4) grayscale(20%);
 }
 .verse-banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(8,8,8,0.5);
+  background: rgba(8,8,8,0.25);
 }
 .verse-banner-content {
   position: relative;
