@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Libros de Fernando Aragón — Apóstol y escritor. Disponibles en Amazon y MercadoLibre.">
+<title>Libros — Fernando Aragón</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* PAGE HERO */
+.page-hero {
+  position: relative;
+  height: 55vh; min-height: 420px;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+  padding-top: 100px;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('../images/general2.jpg');
+  background-size: cover; background-position: center 30%;
+  filter: brightness(0.2) grayscale(30%);
+}
+.page-hero-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, #080808 0%, transparent 60%);
+}
+.page-hero-body {
+  position: relative; z-index: 2;
+  padding: 0 7vw 64px;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); text-decoration: none;
+  margin-bottom: 28px; transition: color 0.3s;
+}
+.back-link:hover { color: var(--gold); }
+
+/* AUTOR ESCRITOR */
+.autor-section {
+  background: #0c0c0c;
+  padding: 80px 7vw;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 56px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.autor-avatar {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(201,168,76,0.3);
+  flex-shrink: 0;
+}
+.autor-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.autor-info .eyebrow { margin-bottom: 12px; }
+.autor-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0.03em; text-transform: uppercase; line-height: 0.95;
+  margin-bottom: 20px;
+}
+.autor-name em { font-style: normal; color: var(--gold); }
+.autor-bio {
+  font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 700px;
+}
+.autor-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.autor-chip {
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.08);
+  padding: 6px 14px; border-radius: 100px;
+}
+
+/* BOOKS GRID */
+.books-section { padding: 100px 7vw; background: var(--black); }
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 48px;
+  margin-top: 64px;
+}
+.book-card {
+  display: flex; flex-direction: column;
+  cursor: default;
+}
+.book-cover-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+}
+.book-card:hover .book-cover-wrap { transform: translateY(-8px) scale(1.02); }
+.book-cover-wrap img {
+  width: 100%; display: block;
+  aspect-ratio: 3/4; object-fit: cover;
+  border-radius: 4px;
+}
+.book-cat {
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.book-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem; letter-spacing: 0.04em; text-transform: uppercase;
+  line-height: 1.1; margin-bottom: 12px;
+}
+.book-subtitle {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 0.95rem; color: rgba(255,255,255,0.45); line-height: 1.5;
+  margin-bottom: 20px;
+}
+.book-desc {
+  font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.75;
+  flex: 1; margin-bottom: 28px;
+}
+.book-actions { display: flex; flex-direction: column; gap: 10px; }
+.book-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 13px 20px; border-radius: 100px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
+}
+.book-btn.amazon {
+  background: #FF9900; color: #000;
+}
+.book-btn.amazon:hover { background: #ffad33; transform: translateY(-1px); }
+.book-btn.meli {
+  background: #FFF159; color: #000;
+}
+.book-btn.meli:hover { background: #ffe800; transform: translateY(-1px); }
+.book-btn.coming {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.3);
+  border: 1px dashed rgba(255,255,255,0.1);
+  cursor: default;
+}
+.book-btn-icon { font-size: 1rem; }
+.book-divider {
+  height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .autor-section { grid-template-columns: 1fr; text-align: center; }
+  .autor-avatar { margin: 0 auto; }
+  .autor-chips { justify-content: center; }
+  .eyebrow { justify-content: center; }
+  .books-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+@media (max-width: 480px) {
+  .books-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="../index.html">Inicio</a>
+  <a href="../index.html#sobre">Sobre</a>
+  <a href="../index.html#eventos">Eventos</a>
+  <a href="../index.html#predicas">Prédicas</a>
+  <a href="libros.html">Libros</a>
+  <a href="fundacion.html">Fundación</a>
+  <a href="blog.html">Blog</a>
+  <a href="../index.html#contacto">Contacto</a>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="../index.html" class="nav-logo">Fernando <span>Aragón</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="../index.html#vision">Visión</a></li>
+      <li><a href="../index.html#eventos">Eventos</a></li>
+      <li><a href="../index.html#predicas">Prédicas</a></li>
+      <li><a href="libros.html" class="active">Libros</a></li>
+      <li><a href="#capsulas">Cápsulas</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="fundacion.html">Fundación</a></li>
+    </ul>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </nav>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="page-hero-body">
+    <a href="../index.html" class="back-link">← Volver al inicio</a>
+    <div class="eyebrow" style="color:var(--gold)">Bibliografía · Fernando Aragón</div>
+    <h1 class="big-title">Sus <em>Libros</em></h1>
+  </div>
+</div>
+
+<!-- AUTOR ESCRITOR -->
+<div class="autor-section">
+  <div class="autor-avatar">
+    <img src="../images/perfil_escritor.jpg" alt="Fernando Aragón — Escritor">
+  </div>
+  <div class="autor-info">
+    <div class="eyebrow">El escritor</div>
+    <h2 class="autor-name">Fernando M. <em>Aragón</em></h2>
+    <p class="autor-bio">Fernando Aragón es uno de los escritores ministeriales más prolíficos de Argentina. Con una pluma marcada por la autoridad apostólica y la profundidad bíblica, cada libro que escribe es una herramienta transformadora para individuos, líderes e iglesias. Sus obras han circulado en más de 10 países de Latinoamérica, siendo referencia en seminarios, iglesias y programas de formación de líderes.</p>
+    <div class="autor-chips">
+      <span class="autor-chip">5 Libros publicados</span>
+      <span class="autor-chip">10+ países</span>
+      <span class="autor-chip">Escritor apostólico</span>
+      <span class="autor-chip">Formación de líderes</span>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKS -->
+<div class="books-section">
+  <div class="eyebrow reveal">Obras publicadas</div>
+  <h2 class="big-title reveal">Todos los <em>Libros</em></h2>
+
+  <div class="books-grid">
+
+    <!-- RECONSTRUCTORES -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="../images/libro_reconstructores.jpg" alt="Reconstructores">
+      </div>
+      <div class="book-cat">Restauración · Ministerio</div>
+      <div class="book-title">Reconstructores</div>
+      <div class="book-subtitle">Llamados a reparar lo que el enemigo destruyó.</div>
+      <p class="book-desc">Un llamado urgente a levantarse como reconstructores de las ruinas del enemigo. Basado en el libro de Nehemías, Fernando Aragón nos desafía a restaurar vidas, familias e iglesias con la autoridad y la tenacidad del creyente.</p>
+      <div class="book-actions">
+        <a href="https://www.amazon.com/s?k=fernando+aragon+reconstructores" target="_blank" class="book-btn amazon">
+          <span class="book-btn-icon">📦</span> Comprar en Amazon
+        </a>
+        <div class="book-divider"></div>
+        <a href="https://www.mercadolibre.com.ar/search?q=fernando+aragon+reconstructores" target="_blank" class="book-btn meli">
+          <span class="book-btn-icon">🛒</span> Comprar en MercadoLibre
+        </a>
+      </div>
+    </div>
+
+    <!-- LOS HIJOS DEL REINO -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="../images/libro_hijos_reino.jpg" alt="Los Hijos del Reino">
+      </div>
+      <div class="book-cat">Identidad · Reino</div>
+      <div class="book-title">Los Hijos del Reino</div>
+      <div class="book-subtitle">La buena semilla.</div>
+      <p class="book-desc">Una revelación profunda sobre la identidad del creyente como hijo del Rey. Fernando Aragón despliega con claridad quiénes somos en Cristo, qué herencia nos pertenece y cómo vivir desde esa posición de autoridad y amor.</p>
+      <div class="book-actions">
+        <a href="https://www.amazon.com/s?k=fernando+aragon+hijos+del+reino" target="_blank" class="book-btn amazon">
+          <span class="book-btn-icon">📦</span> Comprar en Amazon
+        </a>
+        <div class="book-divider"></div>
+        <a href="https://www.mercadolibre.com.ar/search?q=fernando+aragon+hijos+del+reino" target="_blank" class="book-btn meli">
+          <span class="book-btn-icon">🛒</span> Comprar en MercadoLibre
+        </a>
+      </div>
+    </div>
+
+    <!-- RECIBIRÉIS PODER -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="../images/libro_recibir_poder.jpg" alt="Recibiréis Poder">
+      </div>
+      <div class="book-cat">Espíritu Santo · Poder</div>
+      <div class="book-title">Recibiréis Poder</div>
+      <div class="book-subtitle">Manifestaciones del poder de Dios para una vida de conquista.</div>
+      <p class="book-desc">Una guía práctica y bíblica sobre las manifestaciones del poder del Espíritu Santo en la vida del creyente. Este libro equipó a miles de personas para operar con la unción sobrenatural de Dios en su vida diaria.</p>
+      <div class="book-actions">
+        <a href="https://www.amazon.com/s?k=fernando+aragon+recibireis+poder" target="_blank" class="book-btn amazon">
+          <span class="book-btn-icon">📦</span> Comprar en Amazon
+        </a>
+        <div class="book-divider"></div>
+        <a href="https://www.mercadolibre.com.ar/search?q=fernando+aragon+recibireis+poder" target="_blank" class="book-btn meli">
+          <span class="book-btn-icon">🛒</span> Comprar en MercadoLibre
+        </a>
+      </div>
+    </div>
+
+    <!-- LEGADO -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="../images/libro_legado.jpg" alt="Legado">
+      </div>
+      <div class="book-cat">Generaciones · Herencia</div>
+      <div class="book-title">Legado</div>
+      <div class="book-subtitle">Impactando generaciones.</div>
+      <p class="book-desc">Cada vida tiene un legado que dejar. Fernando Aragón nos lleva a reflexionar sobre el tipo de herencia espiritual que estamos construyendo para las generaciones que vienen. Un libro para padres, líderes y todo el que quiera dejar una marca eterna.</p>
+      <div class="book-actions">
+        <a href="https://www.amazon.com/s?k=fernando+aragon+legado" target="_blank" class="book-btn amazon">
+          <span class="book-btn-icon">📦</span> Comprar en Amazon
+        </a>
+        <div class="book-divider"></div>
+        <a href="https://www.mercadolibre.com.ar/search?q=fernando+aragon+legado+generaciones" target="_blank" class="book-btn meli">
+          <span class="book-btn-icon">🛒</span> Comprar en MercadoLibre
+        </a>
+      </div>
+    </div>
+
+    <!-- HÉROES DE LA FE -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="../images/libro_heroes.jpg" alt="Héroes de la Fe">
+      </div>
+      <div class="book-cat">Fe · Conquista · Valentía</div>
+      <div class="book-title">Héroes de la Fe</div>
+      <div class="book-subtitle">Valentía apostólica para tiempos difíciles.</div>
+      <p class="book-desc">Inspirado en los grandes héroes de la fe bíblica y los testimonios de creyentes que cambiaron la historia, este libro nos desafía a levantarnos con valentía y a hacer historia en nuestra generación para la gloria de Dios.</p>
+      <div class="book-actions">
+        <a href="https://www.amazon.com/s?k=fernando+aragon+heroes+de+la+fe" target="_blank" class="book-btn amazon">
+          <span class="book-btn-icon">📦</span> Comprar en Amazon
+        </a>
+        <div class="book-divider"></div>
+        <a href="https://www.mercadolibre.com.ar/search?q=fernando+aragon+heroes+fe" target="_blank" class="book-btn meli">
+          <span class="book-btn-icon">🛒</span> Comprar en MercadoLibre
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- VERSÍCULO -->
+<div class="verse-banner">
+  <div class="verse-banner-bg" style="background-image:url('../images/general1.jpg')"></div>
+  <div class="verse-banner-overlay"></div>
+  <div class="verse-banner-content">
+    <p class="verse-text">"Toda la Escritura es inspirada por Dios y útil para enseñar, para reprender, para corregir, para instruir en justicia."</p>
+    <div class="verse-ref">2 Timoteo 3:16</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="footer-logo">Fernando <span>Aragón</span></a>
+      <p class="footer-blurb">Apóstol · Escritor · Conferencista Internacional. Iglesia Cristo Reina, Tucumán, Argentina.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Ministerio</h4>
+      <ul>
+        <li><a href="../index.html#sobre">Sobre Fernando</a></li>
+        <li><a href="../index.html#eventos">Eventos</a></li>
+        <li><a href="../index.html#predicas">Prédicas</a></li>
+        <li><a href="libros.html">Libros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Más</h4>
+      <ul>
+        <li><a href="fundacion.html">Fundación</a></li>
+        <li><a href="https://www.youtube.com/@fernandoaragon" target="_blank">Canal YouTube</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

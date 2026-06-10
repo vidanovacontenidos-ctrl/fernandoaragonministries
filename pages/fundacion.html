@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fundación Vida a la Familia — Fernando Aragón. Restaurando y equipando familias en Tucumán y Argentina.">
+<title>Fundación Vida a la Familia — Fernando Aragón</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero {
+  position: relative; height: 65vh; min-height: 480px;
+  display: flex; align-items: flex-end; overflow: hidden; padding-top: 100px;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('../images/comunidad.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: brightness(0.35);
+}
+.page-hero-grad { position: absolute; inset: 0; background: linear-gradient(to top, #080808 0%, transparent 60%); }
+.page-hero-body { position: relative; z-index: 2; padding: 0 7vw 64px; }
+.back-link { display:inline-flex; align-items:center; gap:8px; font-size:0.62rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); text-decoration:none; margin-bottom:28px; transition:color 0.3s; }
+.back-link:hover { color: var(--gold); }
+
+/* ABOUT SECTION */
+.fund-about { background: #f2ede6; color: #0c0c0c; padding: 100px 7vw; }
+.fund-about .eyebrow { color: #7a1a25; }
+.fund-about .eyebrow::before { background: #7a1a25; }
+.fund-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+.fund-about .big-title { color: #0c0c0c; }
+.fund-about-text { font-size: 0.9rem; color: rgba(12,12,12,0.6); line-height: 1.85; }
+.fund-about-text p { margin-bottom: 20px; }
+.fund-img-stack { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.fund-img-stack img { width: 100%; height: 320px; object-fit: cover; display: block; }
+
+/* STATS BAR */
+.fund-stats-bar {
+  background: #7a1a25; padding: 60px 7vw;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.fstat { text-align: center; padding: 0 24px; border-right: 1px solid rgba(255,255,255,0.15); }
+.fstat:last-child { border-right: none; }
+.fstat-n { font-family: 'Anton', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.01em; color: #fff; line-height: 1; }
+.fstat-l { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+/* PROGRAMS */
+.fund-programs { background: var(--black); padding: 100px 7vw; }
+.programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 60px; }
+.prog-card { background: #0c0c0c; padding: 40px 32px; border-bottom: 3px solid transparent; transition: border-color 0.4s; cursor: default; }
+.prog-card:hover { border-bottom-color: var(--gold); }
+.prog-icon { font-size: 2rem; margin-bottom: 20px; }
+.prog-title { font-family: 'Anton', sans-serif; font-size: 1.1rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+.prog-desc { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.75; }
+
+/* COMMUNIDAD PHOTO */
+.fund-community { position: relative; height: 500px; overflow: hidden; }
+.fund-community img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: brightness(0.6); }
+.fund-community-over {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(8,8,8,0.8) 0%, transparent 60%);
+  display: flex; align-items: center; padding: 0 7vw;
+}
+.fund-community-text { max-width: 480px; }
+.fund-community-text .big-title { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 20px; }
+.fund-community-text .body-text { margin-bottom: 32px; }
+
+/* CTA */
+.fund-cta { background: #f2ede6; padding: 80px 7vw; text-align: center; }
+.fund-cta .big-title { color: #0c0c0c; margin-bottom: 20px; }
+.fund-cta p { font-size: 0.9rem; color: rgba(12,12,12,0.55); max-width: 560px; margin: 0 auto 40px; line-height: 1.8; }
+.fund-cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 1024px) {
+  .fund-about-grid { grid-template-columns: 1fr; }
+  .fund-stats-bar { grid-template-columns: 1fr 1fr; gap: 0; }
+  .fstat { padding: 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .fstat:nth-child(2n) { border-right: none; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .fund-community-over { background: rgba(8,8,8,0.7); }
+}
+@media (max-width: 640px) {
+  .fund-stats-bar { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="../index.html">Inicio</a>
+  <a href="../index.html#sobre">Sobre</a>
+  <a href="../index.html#eventos">Eventos</a>
+  <a href="libros.html">Libros</a>
+  <a href="fundacion.html">Fundación</a>
+  <a href="blog.html">Blog</a>
+  <a href="../index.html#contacto">Contacto</a>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="../index.html" class="nav-logo">Fernando <span>Aragón</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="../index.html#eventos">Eventos</a></li>
+      <li><a href="../index.html#predicas">Prédicas</a></li>
+      <li><a href="libros.html">Libros</a></li>
+      <li><a href="fundacion.html" class="active">Fundación</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </nav>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="page-hero-body">
+    <a href="../index.html" class="back-link">← Volver al inicio</a>
+    <div class="eyebrow" style="color:var(--gold)">Fundación</div>
+    <h1 class="big-title">Vida a la <em>Familia</em></h1>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="fund-about">
+  <div class="eyebrow reveal">Quiénes somos</div>
+  <div class="fund-about-grid">
+    <div>
+      <h2 class="big-title reveal" style="margin-bottom:32px;">La familia<br><em>primero</em></h2>
+      <div class="fund-about-text reveal">
+        <p>La Fundación Vida a la Familia nace del corazón apostólico de Fernando Aragón con una convicción firme: la familia es el pilar de toda sociedad sana, y cuando las familias son restauradas, las naciones se transforman.</p>
+        <p>Desde Tucumán, Argentina, trabajamos junto a iglesias locales, municipios y organizaciones sociales para llegar a las familias más vulnerables con programas concretos, acompañamiento profesional y la esperanza del evangelio.</p>
+        <p>Creemos que todo ser humano merece una familia que funcione, y que con las herramientas correctas y el amor de Dios, toda familia puede ser restaurada.</p>
+      </div>
+      <a href="../index.html#contacto" class="btn-dark reveal" style="margin-top:32px;">Contactar a la fundación →</a>
+    </div>
+    <div class="fund-img-stack reveal">
+      <img src="../images/comunidad.jpg" alt="Comunidad Vida a la Familia">
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="fund-stats-bar">
+  <div class="fstat reveal"><div class="fstat-n">+500</div><div class="fstat-l">Familias atendidas</div></div>
+  <div class="fstat reveal"><div class="fstat-n">15+</div><div class="fstat-l">Años de servicio</div></div>
+  <div class="fstat reveal"><div class="fstat-n">+30</div><div class="fstat-l">Talleres realizados</div></div>
+  <div class="fstat reveal"><div class="fstat-n">10+</div><div class="fstat-l">Provincias alcanzadas</div></div>
+</div>
+
+<!-- PROGRAMS -->
+<div class="fund-programs">
+  <div class="eyebrow reveal">Programas</div>
+  <h2 class="big-title reveal">Lo que <em>hacemos</em></h2>
+  <div class="programs-grid">
+    <div class="prog-card reveal">
+      <div class="prog-icon">💑</div>
+      <div class="prog-title">Restauración de Parejas</div>
+      <p class="prog-desc">Talleres y retiros de matrimonios en crisis. Herramientas bíblicas y psicológicas para sanar, perdonar y volver a construir. Decenas de matrimonios restaurados cada año.</p>
+    </div>
+    <div class="prog-card reveal">
+      <div class="prog-icon">👨‍👩‍👧‍👦</div>
+      <div class="prog-title">Escuela para Padres</div>
+      <p class="prog-desc">Formación práctica para padres en ejercicio de su rol. Crianza con amor y límites, comunicación familiar, manejo de conflictos y transmisión de valores.</p>
+    </div>
+    <div class="prog-card reveal">
+      <div class="prog-icon">🧒</div>
+      <div class="prog-title">Infancia y Adolescencia</div>
+      <p class="prog-desc">Programas para niños y jóvenes en situación de vulnerabilidad. Espacios seguros, mentores, actividades formativas y acompañamiento integral.</p>
+    </div>
+    <div class="prog-card reveal">
+      <div class="prog-icon">🏘️</div>
+      <div class="prog-title">Intervención Comunitaria</div>
+      <p class="prog-desc">Trabajo directo en barrios y comunidades vulnerables. Articulación con iglesias locales, municipios y ONGs para llevar ayuda concreta donde más se necesita.</p>
+    </div>
+    <div class="prog-card reveal">
+      <div class="prog-icon">📖</div>
+      <div class="prog-title">Recursos y Formación</div>
+      <p class="prog-desc">Materiales gratuitos, libros y guías para líderes comunitarios y pastores. Formación para multiplicar el impacto en cada iglesia y comunidad.</p>
+    </div>
+    <div class="prog-card reveal">
+      <div class="prog-icon">🌎</div>
+      <div class="prog-title">Red de Iglesias</div>
+      <p class="prog-desc">Conectamos iglesias locales para potenciar el impacto social. Juntos llegamos más lejos: una red que comparte recursos, aprendizajes y vocación de servicio.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VERSÍCULO -->
+<div class="verse-banner">
+  <div class="verse-banner-bg" style="background-image:url('../images/pastoral2.jpg')"></div>
+  <div class="verse-banner-overlay"></div>
+  <div class="verse-banner-content">
+    <p class="verse-text">"Y él hará volver el corazón de los padres hacia los hijos, y el corazón de los hijos hacia los padres."</p>
+    <div class="verse-ref">Malaquías 4:6</div>
+  </div>
+</div>
+
+<!-- COMMUNITY PHOTO -->
+<div class="fund-community">
+  <img src="../images/comunidad.jpg" alt="Comunidad">
+  <div class="fund-community-over">
+    <div class="fund-community-text reveal">
+      <div class="eyebrow" style="color:var(--gold)">Nuestras familias</div>
+      <h2 class="big-title">Más de 500<br><em>familias</em></h2>
+      <p class="body-text">Cada rostro representa una historia de restauración. Cada familia atendida es una nación en miniatura que cambia de dirección.</p>
+      <a href="../index.html#contacto" class="btn-pill solid">Sumarme a la misión</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="fund-cta">
+  <div class="eyebrow reveal" style="justify-content:center; color:#7a1a25;">
+    <span style="width:28px; height:1px; background:#7a1a25; display:block;"></span>
+    ¿Cómo ayudar?
+  </div>
+  <h2 class="big-title reveal">Sé parte de la<br><em style="color:#7a1a25;">misión</em></h2>
+  <p class="reveal">Podés colaborar con la Fundación Vida a la Familia de muchas maneras: como voluntario, donante, iglesia aliada o simplemente corriendo la voz. Cada acción suma.</p>
+  <div class="fund-cta-btns reveal">
+    <a href="../index.html#contacto" class="btn-dark">Quiero ser voluntario</a>
+    <a href="../index.html#contacto" class="btn-dark" style="background:#7a1a25;">Iglesia aliada →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="footer-logo">Fernando <span>Aragón</span></a>
+      <p class="footer-blurb">Apóstol · Escritor · Conferencista Internacional. Iglesia Cristo Reina, Tucumán, Argentina.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Fundación</h4>
+      <ul>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Programas</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ministerio</h4>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="libros.html">Libros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Fundación Vida a la Familia · Fernando Aragón Ministries</div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
