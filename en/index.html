@@ -72,22 +72,20 @@
 .v-pillar:hover .v-num { color:var(--gold); }
 .v-title { font-family:'Anton',sans-serif; font-size:1rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px; }
 .v-desc { font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.6; }
-.vision-img-col { position:sticky; top:120px; }
+.vision-img-col { position:sticky; top:120px; margin-right:-7vw; }
 .vision-img-wrap { position:relative; overflow:hidden; }
 .vision-img-wrap img {
   width:100%; height:520px; object-fit:cover; display:block;
-  filter:brightness(0.85) contrast(1.03);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+  filter:brightness(0.88) contrast(1.03);
 }
-.vision-img-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 2px solid rgba(201,168,76,0.2);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
-  pointer-events: none;
-  z-index: 1;
+.vision-img-wrap { position:relative; overflow:hidden; }
+.vision-img-wrap::after {
+  content:'';
+  position:absolute; left:0; top:0; bottom:0; width:100px;
+  background:linear-gradient(to right, #0c0c0c, transparent);
+  pointer-events:none; z-index:1;
 }
+
 .vision-img-caption { position:absolute; bottom:0; left:0; right:0; padding:32px 28px; background:linear-gradient(to top, rgba(8,8,8,0.9), transparent); }
 .vision-img-caption p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:rgba(255,255,255,0.6); }
 
@@ -111,9 +109,16 @@
 #ministerios { background:#0c0c0c; }
 .min-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; margin-top:64px; }
 .min-card { position:relative; height:520px; overflow:hidden; cursor:pointer; text-decoration:none; display:block; }
-.min-card img { width:100%; height:100%; object-fit:cover; transition:transform 1s var(--ease); filter:brightness(0.72) contrast(1.05) grayscale(0%); }
-.min-card:hover img { transform:scale(1.06); filter:brightness(0.92) contrast(1.02) grayscale(0%); }
-.min-grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.3) 55%, transparent 100%); }
+.min-card img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 1s var(--ease);
+  filter:brightness(0.78) contrast(1.05) grayscale(0%);
+}
+.min-card:hover img {
+  transform:scale(1.06);
+  filter:brightness(0.95) contrast(1.02) grayscale(0%);
+}
+.min-grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.2) 50%, transparent 100%); }
 .min-content { position:absolute; bottom:0; left:0; right:0; padding:32px 28px; }
 .min-tag { font-size:0.55rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
 .min-title { font-family:'Anton',sans-serif; font-size:1.5rem; letter-spacing:0.05em; text-transform:uppercase; line-height:1; color:#fff !important; }
@@ -236,17 +241,24 @@
   .min-grid{grid-template-columns:1fr;} .predicas-grid{grid-template-columns:1fr;}
   .books-showcase-grid{grid-template-columns:1fr 1fr;} .fund-stats-row{grid-template-columns:1fr 1fr;}
 }
+
+
+
+
 .nav-lang {
-  display: flex; gap: 2px; align-items: center; flex-shrink: 0;
+  display: flex; align-items: center; gap: 0;
+  margin-left: 4px; flex-shrink: 0;
+  border-left: 1px solid rgba(255,255,255,0.12);
+  padding-left: 12px;
 }
 .lang-opt {
-  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35); text-decoration: none;
-  padding: 6px 10px; border-radius: 100px; transition: all 0.3s; cursor: pointer;
-  background: none; border: none;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  text-decoration: none; padding: 5px 8px; border-radius: 100px;
+  transition: all 0.25s; cursor: pointer; background: none; border: none;
 }
-.lang-opt.active { color: var(--gold); background: rgba(201,168,76,0.12); }
-.lang-opt:hover { color: var(--gold); }
+.lang-opt.active { color: var(--gold); background: rgba(201,168,76,0.1); }
+.lang-opt:hover:not(.active) { color: rgba(255,255,255,0.7); }
 </style>
 </head>
 <body>
@@ -347,7 +359,7 @@
 <section id="sobre">
   <div class="sobre-media">
     <img class="sobre-media-main" src="../images/fernando_sobre.jpg" alt="Fernando Aragón">
-    <div class="sobre-media-badge">Cristo Reina Church · Tucumán</div>
+    <div class="sobre-media-badge">Congreso El Legado 2025 · Tucumán</div>
   </div>
   <div class="sobre-content">
     <div class="eyebrow reveal">Who is Fernando</div>
@@ -407,7 +419,7 @@
     <a href="#contacto" class="btn-pill outline">Invite to your city →</a>
   </div>
   <div class="events-list reveal">
-    <div class="event-row"><div class="event-date"><small>July</small>12–14</div><div class="event-name">Apostolic Congress NOA</div><div class="event-place"><span class="event-place-dot"></span>Cristo Reina Church · Tucumán</div><div class="event-arr">→</div></div>
+    <div class="event-row"><div class="event-date"><small>July</small>12–14</div><div class="event-name">Apostolic Congress NOA</div><div class="event-place"><span class="event-place-dot"></span>Congreso El Legado 2025 · Tucumán</div><div class="event-arr">→</div></div>
     <div class="event-row"><div class="event-date"><small>August</small>02–03</div><div class="event-name">Men's Gathering — Identity and Legacy</div><div class="event-place"><span class="event-place-dot"></span>Buenos Aires</div><div class="event-arr">→</div></div>
     <div class="event-row"><div class="event-date"><small>August</small>22–24</div><div class="event-name">Leaders Conference — Impact Generation</div><div class="event-place"><span class="event-place-dot"></span>Córdoba, Argentina</div><div class="event-arr">→</div></div>
     <div class="event-row"><div class="event-date"><small>Sept.</small>TBC</div><div class="event-name">International Pastors Conference</div><div class="event-place"><span class="event-place-dot"></span>International · To be confirmed</div><div class="event-arr">→</div></div>
