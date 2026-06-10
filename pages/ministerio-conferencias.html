@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conferencias — Fernando Aragón Ministries</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* ── PAGE HERO BN ── */
+.min-page-hero {
+  position:relative; height:90vh; min-height:560px;
+  display:flex; align-items:flex-end; overflow:hidden;
+}
+.mph-bg {
+  position:absolute; inset:0;
+  background-image:url('../images/conferencia1.jpg');
+  background-size:cover; background-position:center 25%;
+  filter:grayscale(100%) brightness(0.35) contrast(1.2);
+  animation:slowZoom 14s ease-in-out forwards;
+}
+@keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1)} }
+.mph-grad {
+  position:absolute; inset:0;
+  background: linear-gradient(to top, #080808 0%, rgba(8,8,8,0.4) 45%, transparent 80%),
+              linear-gradient(to right, rgba(8,8,8,0.5) 0%, transparent 50%);
+}
+.mph-body { position:relative; z-index:2; padding:0 7vw 80px; }
+.back-link { display:inline-flex; align-items:center; gap:8px; font-size:0.62rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; margin-bottom:28px; transition:color 0.3s; }
+.back-link:hover { color:var(--gold); }
+.mph-num { font-family:'Anton',sans-serif; font-size:clamp(5rem,15vw,13rem); line-height:1; letter-spacing:-0.02em; color:rgba(255,255,255,0.05); position:absolute; right:7vw; bottom:60px; pointer-events:none; }
+
+/* ── INTRO ── */
+.min-intro {
+  background:#080808; padding:100px 7vw;
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.intro-lema {
+  font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+  font-size:clamp(1.5rem,3vw,2.4rem); color:rgba(255,255,255,0.7); line-height:1.35;
+  margin-bottom:32px; border-left:3px solid var(--gold); padding-left:24px;
+}
+.intro-desc { font-size:0.9rem; color:rgba(255,255,255,0.5); line-height:1.85; margin-bottom:36px; }
+
+/* ── IMG MOSAIC ── */
+.min-mosaic {
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:280px 280px; gap:3px;
+}
+.mg-item { overflow:hidden; }
+.mg-item img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.7) grayscale(30%); transition:all 0.8s; }
+.mg-item:hover img { filter:brightness(0.95) grayscale(0%); transform:scale(1.04); }
+.mg-item:first-child { grid-row:span 2; }
+
+/* ── PUNTOS ── */
+.min-puntos { background:#0c0c0c; padding:100px 7vw; }
+.puntos-grid { display:flex; flex-direction:column; margin-top:60px; }
+.punto {
+  display:grid; grid-template-columns:80px 1fr; gap:32px; align-items:start;
+  padding:36px 0; border-bottom:1px solid rgba(255,255,255,0.05); transition:all 0.3s;
+}
+.punto:first-child { border-top:1px solid rgba(255,255,255,0.05); }
+.punto:hover { padding-left:16px; padding-right:16px; background:rgba(255,255,255,0.02); }
+.punto-num { font-family:'Anton',sans-serif; font-size:2.5rem; color:rgba(255,255,255,0.06); line-height:1; transition:color 0.3s; }
+.punto:hover .punto-num { color:var(--gold); }
+.punto-title { font-family:'Anton',sans-serif; font-size:1.1rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:8px; }
+.punto-desc { font-size:0.85rem; color:rgba(255,255,255,0.45); line-height:1.7; max-width:640px; }
+
+/* ── GALLERY STRIP ── */
+.min-gallery { background:var(--black); padding:0; overflow:hidden; }
+.gal-bw-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+.gal-bw-item { height:320px; overflow:hidden; position:relative; }
+.gal-bw-item img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(100%) brightness(0.6); transition:all 0.8s; }
+.gal-bw-item:hover img { filter:grayscale(0%) brightness(0.9); transform:scale(1.05); }
+
+/* ── OTRAS AREAS ── */
+.min-otras { background:#0c0c0c; padding:100px 7vw; }
+.other-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
+.other-card { position:relative; height:340px; overflow:hidden; cursor:pointer; text-decoration:none; display:block; }
+.other-card img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.45) grayscale(60%); transition:all 0.8s; }
+.other-card:hover img { filter:brightness(0.7) grayscale(0%); transform:scale(1.06); }
+.other-grad { position:absolute; inset:0; background:linear-gradient(to top, rgba(8,8,8,0.95), transparent 55%); }
+.other-content { position:absolute; bottom:0; left:0; right:0; padding:24px 22px; }
+.other-tag { font-size:0.55rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.other-title { font-family:'Anton',sans-serif; font-size:1.2rem; letter-spacing:0.05em; text-transform:uppercase; }
+
+/* ── CTA ── */
+.min-cta { background:var(--black); padding:100px 7vw; text-align:center; }
+.min-cta .big-title { margin-bottom:24px; }
+.min-cta p { font-size:0.9rem; color:rgba(255,255,255,0.45); max-width:500px; margin:0 auto 40px; line-height:1.8; }
+
+@media(max-width:1024px){
+  .min-intro{ grid-template-columns:1fr; }
+  .min-mosaic{ grid-template-columns:1fr 1fr; grid-template-rows:220px 220px; }
+  .mg-item:first-child{ grid-row:auto; }
+  .gal-bw-strip{ grid-template-columns:1fr 1fr; }
+  .other-grid{ grid-template-columns:1fr 1fr; }
+}
+@media(max-width:640px){
+  .gal-bw-strip{ grid-template-columns:1fr; }
+  .other-grid{ grid-template-columns:1fr; }
+  .punto{ grid-template-columns:1fr; gap:8px; }
+  .punto-num{ font-size:1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-overlay" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="../index.html">Inicio</a>
+  <a href="../index.html#sobre">Sobre</a>
+  <a href="../index.html#eventos">Eventos</a>
+  <a href="../index.html#predicas">Prédicas</a>
+  <a href="libros.html">Libros</a>
+  <a href="../index.html#ministerios">Ministerios</a>
+  <a href="fundacion.html">Fundación</a>
+  <a href="../index.html#contacto">Contacto</a>
+</div>
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="../index.html" class="nav-logo">Fernando <span>Aragón</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="../index.html#eventos">Eventos</a></li>
+      <li><a href="../index.html#predicas">Prédicas</a></li>
+      <li><a href="libros.html">Libros</a></li>
+      <li><a href="../index.html#ministerios" class="active">Ministerios</a></li>
+      <li><a href="fundacion.html">Fundación</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </nav>
+</div>
+
+
+<!-- HERO BN -->
+<div class="min-page-hero">
+  <div class="mph-bg"></div>
+  <div class="mph-grad"></div>
+  <div class="mph-body">
+    <a href="../index.html#ministerios" class="back-link">← Áreas de ministerio</a>
+    <div class="eyebrow" style="color:var(--gold)">01 — Ministerio</div>
+    <h1 class="big-title" style="font-size:clamp(4rem,10vw,9rem); line-height:0.88;">Conferencias</h1>
+  </div>
+  <div class="mph-num">01</div>
+</div>
+
+<!-- INTRO -->
+<div class="min-intro">
+  <div>
+    <div class="eyebrow reveal">El ministerio apostólico</div>
+    <div class="intro-lema reveal">Mensaje apostólico que enciende naciones</div>
+    <p class="intro-desc reveal">Fernando Aragón tiene un don único para llevar mensajes que combinan autoridad bíblica, unción profética y aplicación práctica. Sus conferencias han marcado iglesias, pastores y líderes en toda Argentina y el mundo hispano.</p>
+    <a href="../index.html#contacto" class="btn-pill solid reveal">Invitar a conferencia →</a>
+  </div>
+  <div class="min-mosaic reveal">
+    <div class="mg-item"><img src="../images/conferencia3.jpg" alt="Conferencias"></div><div class="mg-item"><img src="../images/conferencia2.jpg" alt="Conferencias"></div><div class="mg-item"><img src="../images/hero_slide1.jpg" alt="Conferencias"></div><div class="mg-item"><img src="../images/general2.jpg" alt="Conferencias"></div>
+  </div>
+</div>
+
+<!-- VERSÍCULO -->
+<div class="verse-banner">
+  <div class="verse-banner-bg" style="background-image:url('../images/conferencia2.jpg')"></div>
+  <div class="verse-banner-overlay"></div>
+  <div class="verse-banner-content">
+    <p class="verse-text">"Así que la fe viene del oír, y el oír, por la Palabra de Cristo."</p>
+    <div class="verse-ref">Romanos 10:17</div>
+  </div>
+</div>
+
+<!-- PUNTOS CLAVE -->
+<div class="min-puntos">
+  <div class="eyebrow reveal">Lo que incluye</div>
+  <h2 class="big-title reveal">En <em>detalle</em></h2>
+  <div class="puntos-grid">
+    
+        <div class="punto reveal">
+          <div class="punto-num">01</div>
+          <div>
+            <div class="punto-title">Mensaje apostólico</div>
+            <div class="punto-desc">Predicación con fundamento bíblico sólido y unción del Espíritu Santo que transforma vidas.</div>
+          </div>
+        </div>
+        <div class="punto reveal">
+          <div class="punto-num">02</div>
+          <div>
+            <div class="punto-title">Congresos y eventos</div>
+            <div class="punto-desc">Disponible para congresos apostólicos, retiros de líderes, convenciones y cultos especiales.</div>
+          </div>
+        </div>
+        <div class="punto reveal">
+          <div class="punto-num">03</div>
+          <div>
+            <div class="punto-title">Argentina e internacional</div>
+            <div class="punto-desc">Ha predicado en más de 10 provincias argentinas y en países de Latinoamérica.</div>
+          </div>
+        </div>
+        <div class="punto reveal">
+          <div class="punto-num">04</div>
+          <div>
+            <div class="punto-title">Temáticas específicas</div>
+            <div class="punto-desc">Apostolado, Familia, Generaciones, Identidad, Liderazgo, Naciones y más.</div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<!-- GALERÍA BN -->
+<div class="min-gallery">
+  <div class="gal-bw-strip">
+    <div class="gal-bw-item"><img src="../images/conferencia3.jpg" alt="Conferencias"></div>
+    <div class="gal-bw-item"><img src="../images/conferencia2.jpg" alt="Conferencias"></div>
+    <div class="gal-bw-item"><img src="../images/hero_slide1.jpg" alt="Conferencias"></div>
+    <div class="gal-bw-item"><img src="../images/general2.jpg" alt="Conferencias"></div>
+  </div>
+</div>
+
+<!-- OTRAS ÁREAS -->
+<div class="min-otras">
+  <div class="eyebrow reveal">Otras áreas</div>
+  <h2 class="big-title reveal">Más <em>ministerios</em></h2>
+  <div class="other-grid reveal">
+    
+        <a href="ministerio-mentoria.html" class="other-card">
+          <img src="../images/mentoria1.jpg" alt="Mentoría">
+          <div class="other-grad"></div>
+          <div class="other-content">
+            <div class="other-tag">02 — Formación</div>
+            <div class="other-title">Mentoría</div>
+          </div>
+        </a>
+        <a href="ministerio-pastoral.html" class="other-card">
+          <img src="../images/pastoral2.jpg" alt="Pastoral">
+          <div class="other-grad"></div>
+          <div class="other-content">
+            <div class="other-tag">03 — Local · Tucumán</div>
+            <div class="other-title">Pastoral</div>
+          </div>
+        </a>
+        <a href="ministerio-hombres.html" class="other-card">
+          <img src="../images/hombres2.jpg" alt="Hombres">
+          <div class="other-grad"></div>
+          <div class="other-content">
+            <div class="other-tag">04 — Identidad · Legado</div>
+            <div class="other-title">Hombres</div>
+          </div>
+        </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="min-cta">
+  <div class="eyebrow reveal" style="justify-content:center;">Contacto</div>
+  <h2 class="big-title reveal">¿Querés invitar<br>a <em>Fernando</em>?</h2>
+  <p class="reveal">Completá el formulario de contacto y el equipo se comunicará a la brevedad para coordinar los detalles.</p>
+  <a href="../index.html#contacto" class="btn-pill solid reveal">Invitar a conferencia →</a>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="../index.html" class="footer-logo">Fernando <span>Aragón</span></a>
+      <p class="footer-blurb">Apóstol · Escritor · Conferencista Internacional. Iglesia Cristo Reina, Tucumán, Argentina.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Ministerio</h4>
+      <ul>
+        <li><a href="../index.html#sobre">Sobre Fernando</a></li>
+        <li><a href="../index.html#eventos">Eventos</a></li>
+        <li><a href="libros.html">Libros</a></li>
+        <li><a href="fundacion.html">Fundación</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Áreas</h4>
+      <ul>
+        <li><a href="ministerio-conferencias.html">Conferencias</a></li>
+        <li><a href="ministerio-mentoria.html">Mentoría</a></li>
+        <li><a href="ministerio-pastoral.html">Pastoral</a></li>
+        <li><a href="ministerio-hombres.html">Hombres</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
+    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+
+</body>
+</html>
