@@ -51,6 +51,10 @@
 .rel-title { font-family:'Anton',sans-serif; font-size:0.9rem; letter-spacing:0.04em; text-transform:uppercase; color:#fff; line-height:1.2; }
 
 @media(max-width:768px){ .related-grid{grid-template-columns:1fr;} }
+.nav-lang { display:flex; gap:2px; align-items:center; flex-shrink:0; }
+.lang-opt { font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; padding:6px 10px; border-radius:100px; transition:all 0.3s; }
+.lang-opt.active { color:var(--gold); background:rgba(201,168,76,0.12); }
+.lang-opt:hover { color:var(--gold); }
 </style>
 </head>
 <body>
@@ -76,6 +80,7 @@
       <li><a href="../blog.html" class="active">Blog</a></li>
     </ul>
     <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-lang"><a href="../index.html" class="lang-opt active">ES</a><a href="../en/index.html" class="lang-opt">EN</a></div>
     <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
   </nav>
 </div>
@@ -145,13 +150,13 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries</div>
-    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    
   </div>
 </footer>
 <script src="../js/main.js"></script>
 <script>
-function openMob(){ document.getElementById('mobNav').classList.add('open'); document.body.classList.add('mob-open'); }
-function closeMob(){ document.getElementById('mobNav').classList.remove('open'); document.body.classList.remove('mob-open'); }
+function openMob(){ var m=document.getElementById('mobNav'); m.classList.add('open'); m.style.display='flex'; document.body.style.overflow='hidden'; }
+function closeMob(){ var m=document.getElementById('mobNav'); m.classList.remove('open'); m.style.display='none'; document.body.style.overflow=''; }
 const burger = document.getElementById('navBurger');
 const mobClose = document.getElementById('mobClose');
 if(burger) burger.addEventListener('click', openMob);

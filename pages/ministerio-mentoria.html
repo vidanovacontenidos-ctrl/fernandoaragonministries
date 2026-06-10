@@ -66,13 +66,6 @@
 .punto-title { font-family:'Anton',sans-serif; font-size:1.1rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:8px; }
 .punto-desc { font-size:0.85rem; color:rgba(255,255,255,0.45); line-height:1.7; max-width:640px; }
 
-/* ── GALLERY STRIP ── */
-.min-gallery { background:var(--black); padding:0; overflow:hidden; }
-.gal-bw-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-.gal-bw-item { height:320px; overflow:hidden; position:relative; }
-.gal-bw-item img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(85%) brightness(0.78); transition:all 0.8s; }
-.gal-bw-item:hover img { filter:grayscale(0%) brightness(0.9); transform:scale(1.05); }
-
 /* ── OTRAS AREAS ── */
 .min-otras { background:#0c0c0c; padding:100px 7vw; }
 .other-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
@@ -123,6 +116,7 @@
 .sticky-photo-1 img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center center;
   filter: brightness(0.92) contrast(1.03);
   display: block;
 }
@@ -164,6 +158,21 @@
   .sticky-photo-1 { height: 260px; }
 }
 
+.other-links {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px;
+}
+.other-link {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1); padding: 12px 24px; border-radius: 100px;
+  transition: all 0.3s;
+}
+.other-link:hover { color: var(--gold); border-color: var(--gold); }
+.nav-lang { display:flex; gap:2px; align-items:center; flex-shrink:0; }
+.lang-opt { font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; padding:6px 10px; border-radius:100px; transition:all 0.3s; }
+.lang-opt.active { color:var(--gold); background:rgba(201,168,76,0.12); }
+.lang-opt:hover { color:var(--gold); }
 </style>
 </head>
 <body>
@@ -193,6 +202,7 @@
       <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-lang"><a href="../index.html" class="lang-opt active">ES</a><a href="../en/index.html" class="lang-opt">EN</a></div>
     <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
   </nav>
 </div>
@@ -217,7 +227,7 @@
   <!-- LEFT: sticky photo column -->
   <div class="min-sticky-photos">
     <div class="sticky-photo-1">
-      <img src="../images/mentoria2.jpg" alt="">
+      <img src="../images/mentoria1.jpg" alt="">
     </div>
     </div>
   <!-- RIGHT: scrolling content -->
@@ -285,10 +295,6 @@
   </div>
 </div>
 
-<!-- GALERÍA BN -->
-<div class="min-gallery">
-  <div class="gal-bw-strip">
-    <div class="gal-bw-item"><img src="../images/mentoria1.jpg" alt="Mentoría"></div>
     <div class="gal-bw-item"><img src="../images/mentoria2.jpg" alt="Mentoría"></div>
     <div class="gal-bw-item"><img src="../images/legado1.jpg" alt="Mentoría"></div>
     <div class="gal-bw-item"><img src="../images/general1.jpg" alt="Mentoría"></div>
@@ -299,11 +305,12 @@
 <div class="min-otras">
   <div class="eyebrow reveal">Otras áreas</div>
   <h2 class="big-title reveal">Más <em>ministerios</em></h2>
-  <div class="other-grid reveal">
-    
-        <a href="ministerio-conferencias.html" class="other-card">
-          <img src="../images/conferencia3.jpg" alt="Conferencias">
-          <div class="other-grad"></div>
+  <div class="other-links reveal">
+    <a href="ministerio-conferencias.html" class="other-link">Conferencias →</a>
+    <a href="ministerio-mentoria.html" class="other-link">Mentoría →</a>
+    <a href="ministerio-pastoral.html" class="other-link">Pastoral →</a>
+    <a href="ministerio-hombres.html" class="other-link">Hombres →</a>
+  </div>
           <div class="other-content">
             <div class="other-tag">Ministerio</div>
             <div class="other-title">Conferencias</div>
@@ -364,7 +371,7 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
-    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    
   </div>
 </footer>
 <script src="../js/main.js"></script>

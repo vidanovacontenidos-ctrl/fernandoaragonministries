@@ -74,7 +74,20 @@
 .v-desc { font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.6; }
 .vision-img-col { position:sticky; top:120px; }
 .vision-img-wrap { position:relative; overflow:hidden; }
-.vision-img-wrap img { width:100%; height:520px; object-fit:cover; display:block; filter:brightness(0.75) contrast(1.05); }
+.vision-img-wrap img {
+  width:100%; height:520px; object-fit:cover; display:block;
+  filter:brightness(0.85) contrast(1.03);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+}
+.vision-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(201,168,76,0.2);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+  pointer-events: none;
+  z-index: 1;
+}
 .vision-img-caption { position:absolute; bottom:0; left:0; right:0; padding:32px 28px; background:linear-gradient(to top, rgba(8,8,8,0.9), transparent); }
 .vision-img-caption p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:rgba(255,255,255,0.6); }
 
@@ -223,6 +236,17 @@
   .min-grid{grid-template-columns:1fr;} .predicas-grid{grid-template-columns:1fr;}
   .books-showcase-grid{grid-template-columns:1fr 1fr;} .fund-stats-row{grid-template-columns:1fr 1fr;}
 }
+.nav-lang {
+  display: flex; gap: 2px; align-items: center; flex-shrink: 0;
+}
+.lang-opt {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); text-decoration: none;
+  padding: 6px 10px; border-radius: 100px; transition: all 0.3s; cursor: pointer;
+  background: none; border: none;
+}
+.lang-opt.active { color: var(--gold); background: rgba(201,168,76,0.12); }
+.lang-opt:hover { color: var(--gold); }
 </style>
 </head>
 <body>
@@ -256,6 +280,7 @@
       <li><a href="foundation.html">Foundation</a></li>
     </ul>
     <a href="#contacto" class="nav-cta">Contact</a>
+    <div class="nav-lang"><a href="../index.html" class="lang-opt">ES</a><span class="lang-opt active">EN</span></div>
     <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
   </nav>
 </div>
@@ -503,9 +528,15 @@
       <div class="ci-item"><div class="ci-dot"></div><div><div class="ci-label">Main Location</div><div class="ci-value">Cristo Reina Church<br>San Miguel de Tucumán, Argentina</div></div></div>
       <div class="ci-item"><div class="ci-dot"></div><div><div class="ci-label">Email</div><div class="ci-value">contact@fernandoaragonministries.com</div></div></div>
       <div class="ci-item"><div class="ci-dot"></div><div><div class="ci-label">Ministry</div><div class="ci-value">Fernando Aragón Ministries<br>Vida a la Familia Foundation</div></div></div>
-      <div class="social-row">
-        <a href="#" class="soc-btn">▶</a><a href="#" class="soc-btn">◉</a>
-        <a href="#" class="soc-btn">f</a><a href="#" class="soc-btn">♫</a>
+      <div class="social-row"><a href="https://www.instagram.com/pasfernandoaragon" target="_blank" class="soc-btn" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/fernandoymariaAragon" target="_blank" class="soc-btn" title="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="soc-btn soc-yt-soon" title="YouTube — coming soon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.35"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -534,17 +565,14 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries · All rights reserved</div>
-    <div class="footer-lang">
-      <button class="lang-btn" onclick="location.href='../index.html'">ES</button>
-      <button class="lang-btn active">EN</button>
-    </div>
+    
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
 <script>
-function openMob(){ document.getElementById('mobNav').classList.add('open'); document.body.classList.add('mob-open'); }
-function closeMob(){ document.getElementById('mobNav').classList.remove('open'); document.body.classList.remove('mob-open'); }
+function openMob(){ var m=document.getElementById('mobNav'); m.classList.add('open'); m.style.display='flex'; document.body.style.overflow='hidden'; }
+function closeMob(){ var m=document.getElementById('mobNav'); m.classList.remove('open'); m.style.display='none'; document.body.style.overflow=''; }
 document.getElementById('navBurger').addEventListener('click', openMob);
 document.getElementById('mobClose').addEventListener('click', closeMob);
 document.querySelectorAll('#mobNav a').forEach(a => a.addEventListener('click', closeMob));

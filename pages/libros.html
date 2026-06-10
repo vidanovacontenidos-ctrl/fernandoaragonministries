@@ -157,6 +157,10 @@
 @media (max-width: 480px) {
   .books-grid { grid-template-columns: 1fr; }
 }
+.nav-lang { display:flex; gap:2px; align-items:center; flex-shrink:0; }
+.lang-opt { font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; padding:6px 10px; border-radius:100px; transition:all 0.3s; }
+.lang-opt.active { color:var(--gold); background:rgba(201,168,76,0.12); }
+.lang-opt:hover { color:var(--gold); }
 </style>
 </head>
 <body>
@@ -189,6 +193,7 @@
       <li><a href="fundacion.html">Fundación</a></li>
     </ul>
     <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-lang"><a href="../index.html" class="lang-opt active">ES</a><a href="../en/index.html" class="lang-opt">EN</a></div>
     <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
   </nav>
 </div>
@@ -370,7 +375,7 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
-    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    
   </div>
 </footer>
 

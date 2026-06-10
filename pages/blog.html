@@ -45,6 +45,21 @@
 @media(max-width:640px) {
   .blog-grid-full { grid-template-columns:1fr; }
 }
+.blog-list { display:flex; flex-direction:column; gap:0; margin-top:48px; }
+.blog-list-item { display:grid; grid-template-columns:140px 1fr 140px; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid rgba(255,255,255,0.06); text-decoration:none; transition:all 0.3s; position:relative; }
+.blog-list-item:first-child { border-top:1px solid rgba(255,255,255,0.06); }
+.blog-list-item:hover { padding-left:16px; }
+.blog-list-item::before { content:''; position:absolute; left:0; top:0; bottom:0; width:0; background:var(--gold); transition:width 0.3s; }
+.blog-list-item:hover::before { width:2px; }
+.bli-cat { font-size:0.6rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
+.bli-title { font-family:'Anton',sans-serif; font-size:clamp(0.9rem,2vw,1.2rem); letter-spacing:0.03em; text-transform:uppercase; color:#fff; line-height:1.15; transition:color 0.3s; }
+.blog-list-item:hover .bli-title { color:var(--gold); }
+.bli-meta { font-size:0.65rem; color:rgba(255,255,255,0.3); text-align:right; }
+@media(max-width:640px){ .blog-list-item{ grid-template-columns:1fr; gap:8px; } .bli-meta{ text-align:left; } }
+.nav-lang { display:flex; gap:2px; align-items:center; flex-shrink:0; }
+.lang-opt { font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; padding:6px 10px; border-radius:100px; transition:all 0.3s; }
+.lang-opt.active { color:var(--gold); background:rgba(201,168,76,0.12); }
+.lang-opt:hover { color:var(--gold); }
 </style>
 </head>
 <body>
@@ -71,6 +86,7 @@
       <li><a href="blog.html" class="active">Blog</a></li>
     </ul>
     <a href="../index.html#contacto" class="nav-cta">Contacto</a>
+    <div class="nav-lang"><a href="../index.html" class="lang-opt active">ES</a><a href="../en/index.html" class="lang-opt">EN</a></div>
     <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
   </nav>
 </div>
@@ -105,8 +121,28 @@
 <div class="blog-page">
   <div class="eyebrow reveal">Todos los artículos</div>
   <h2 class="big-title reveal">Reflexiones &amp;<br><em>Enseñanzas</em></h2>
-  <div class="blog-grid-full reveal">
-    <a href="blog-familia.html" class="blog-card-full" style="text-decoration:none;"><img src="../images/familia.jpg" alt="Familia"><div class="blog-over"></a><div class="blog-body-full"><div class="blog-cat">Familia</div><div class="blog-title">La familia como primer ministerio</div><div class="blog-meta">Fernando Aragón · 4 min</div></div></div>
+  <div class="blog-list reveal">
+    <a href="blog-apostolado.html" class="blog-list-item">
+      <div class="bli-cat">Apostolado</div>
+      <div class="bli-title">El tiempo de los apóstoles: por qué el mundo necesita este ministerio hoy</div>
+      <div class="bli-meta">Fernando Aragón · 5 min</div>
+    </a>
+    <a href="blog-familia.html" class="blog-list-item">
+      <div class="bli-cat">Familia</div>
+      <div class="bli-title">La familia como primer ministerio</div>
+      <div class="bli-meta">Fernando Aragón · 4 min</div>
+    </a>
+    <a href="blog-liderazgo.html" class="blog-list-item">
+      <div class="bli-cat">Liderazgo</div>
+      <div class="bli-title">Cómo encontrar un mentor apostólico</div>
+      <div class="bli-meta">Fernando Aragón · 5 min</div>
+    </a>
+    <a href="blog-generaciones.html" class="blog-list-item">
+      <div class="bli-cat">Generaciones</div>
+      <div class="bli-title">Qué legado estamos dejando</div>
+      <div class="bli-meta">Fernando Aragón · 6 min</div>
+    </a>
+  </div>
     <a href="blog-liderazgo.html" class="blog-card-full" style="text-decoration:none;"><img src="../images/mentoria1.jpg" alt="Liderazgo"><div class="blog-over"></a><div class="blog-body-full"><div class="blog-cat">Liderazgo</div><div class="blog-title">Cómo encontrar un mentor apostólico</div><div class="blog-meta">Fernando Aragón · 5 min</div></div></div>
     <a href="blog-hombres.html" class="blog-card-full" style="text-decoration:none;"><img src="../images/hombres1.jpg" alt="Hombres"><div class="blog-over"></a><div class="blog-body-full"><div class="blog-cat">Identidad</div><div class="blog-title">El hombre que Dios está levantando</div><div class="blog-meta">Fernando Aragón · 6 min</div></div></div>
     <a href="blog-generaciones.html" class="blog-card-full" style="text-decoration:none;"><img src="../images/general2.jpg" alt="Generaciones"><div class="blog-over"></a><div class="blog-body-full"><div class="blog-cat">Generaciones</div><div class="blog-title">Qué legado estamos dejando</div><div class="blog-meta">Fernando Aragón · 7 min</div></div></div>
@@ -142,7 +178,7 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Fernando Aragón Ministries · Todos los derechos reservados</div>
-    <div class="footer-lang"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    
   </div>
 </footer>
 
